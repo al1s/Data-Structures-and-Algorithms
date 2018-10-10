@@ -6,7 +6,7 @@
 
 2. [Challenge: Insert and shift an array](Challenges/arrayShift)
 
-3. [Challenge: Array Binary Search](Challenges/BinarySearch)
+3. [Challenge: Array Binary Search](Challenges/binarySearch)
 
 4. [Implementation: Linked List](#)
 
