@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using arrayBinarySearch;
+using System.Linq;
 
 namespace arrayBinarySearchTests
 {
@@ -40,6 +41,24 @@ namespace arrayBinarySearchTests
         public void returnPositionForExistingValue(int[] array, int number, int correctAnswer)
         {
             Assert.Equal(correctAnswer, Program.BinarySearch(array, number));
+        }
+        [Fact]
+        public void performanceTest100Elements()
+        {
+            int[] array = Enumerable.Range(0, 100).Select(i => i).ToArray();
+            Assert.Equal(10, Program.BinarySearch(array, 10));
+        }
+        [Fact]
+        public void performanceTest10000Elements()
+        {
+            int[] array = Enumerable.Range(0, 10000).Select(i => i).ToArray();
+            Assert.Equal(10, Program.BinarySearch(array, 10));
+        }
+        [Fact]
+        public void performanceTest100000Elements()
+        {
+            int[] array = Enumerable.Range(0, 100000).Select(i => i).ToArray();
+            Assert.Equal(10, Program.BinarySearch(array, 10));
         }
     }
 }

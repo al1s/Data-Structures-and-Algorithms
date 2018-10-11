@@ -22,11 +22,19 @@ namespace arrayBinarySearch
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // BinarySearch(new int[] { 1, 2, 3, 4, 5 }, 4);
-            // BinarySearch(new int[] { 1, 2, 4, 5 }, 99);
-            // BinarySearch(new int[] { 1, 2, 4, 5 }, 1);
-            BinarySearch(new int[] { 1, 2 }, 2);
+            int[] array = new int[] { 1, 2, 3, 4, 5 };
+            int number = 4;
+            Console.WriteLine($"Index for number {number} in ({String.Join(", ", array)}): {BinarySearch(array, number)}");
+            array =new int[] { 1, 2, 4, 5 };
+            number = 99;
+            Console.WriteLine($"Index for number {number} in ({String.Join(", ", array)}): {BinarySearch(array, number)}");
+            array = new int[] { 1, 2, 4, 5 };
+            number = 1;
+            Console.WriteLine($"Index for number {number} in ({String.Join(", ", array)}): {BinarySearch(array, number)}");
+            array = new int[] { 1, 2 };
+            number = 2;
+            Console.WriteLine($"Index for number {number} in ({String.Join(", ", array)}): {BinarySearch(array, number)}");
+            Console.ReadLine();
         }
     }
 }
