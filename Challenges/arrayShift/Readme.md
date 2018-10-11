@@ -15,4 +15,4 @@ We iterate over initial array copying every element to a new array, so time is O
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![image](https://raw.githubusercontent.com/al1s/Data-Structures-and-Algorithms/array_shift/array_shift.PNG)
+![image](https://raw.githubusercontent.com/al1s/Data-Structures-and-Algorithms/assets/array_shift.PNG)
