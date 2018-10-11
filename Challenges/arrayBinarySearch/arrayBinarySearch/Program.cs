@@ -9,13 +9,12 @@ namespace arrayBinarySearch
             if (array.Length == 0) return -1;
             int lowBound = 0;
             int highBound = array.Length - 1;
-            int midOfArray = (highBound - lowBound) / 2;
             do
             {
+                int midOfArray = (highBound + lowBound) / 2 ;
                 if (array[midOfArray] == number) return midOfArray;
                 if (array[midOfArray] > number) highBound = midOfArray;
                 else lowBound = midOfArray + 1;
-                midOfArray = (highBound - lowBound) / 2 + lowBound;
 
             } while (lowBound <= highBound);
             return -1;
