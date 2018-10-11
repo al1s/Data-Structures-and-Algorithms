@@ -14,15 +14,19 @@ namespace arrayBinarySearch
             {
                 if (array[midOfArray] == number) return midOfArray;
                 if (array[midOfArray] > number) highBound = midOfArray;
-                else lowBound = midOfArray;
+                else lowBound = midOfArray + 1;
                 midOfArray = (highBound - lowBound) / 2 + lowBound;
 
-            } while (lowBound > highBound);
+            } while (lowBound <= highBound);
             return -1;
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            // BinarySearch(new int[] { 1, 2, 3, 4, 5 }, 4);
+            // BinarySearch(new int[] { 1, 2, 4, 5 }, 99);
+            // BinarySearch(new int[] { 1, 2, 4, 5 }, 1);
+            BinarySearch(new int[] { 1, 2 }, 2);
         }
     }
 }
