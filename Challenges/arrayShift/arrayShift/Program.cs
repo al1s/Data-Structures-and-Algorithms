@@ -4,6 +4,12 @@ namespace arrayShift
 {
     class Program
     {
+        /// <summary>
+        /// Insert a number into the middle of an array
+        /// </summary>
+        /// <param name="array">The array where to insert a number</param>
+        /// <param name="number">The number to put into an array</param>
+        /// <returns>New array with a number inserted</returns>
         static int[] ArrayShift(int[] array, int number)
         {
             int arrLength = array.Length;
@@ -19,6 +25,11 @@ namespace arrayShift
         }
 
         // Stretch goal
+        /// <summary>
+        /// Delete an element in the middle of an array and shift it to eliminate an empty place
+        /// </summary>
+        /// <param name="array">An array where to delete an element</param>
+        /// <returns>New array with an element deleted</returns>
         static int[] ArrayUnShift(int[] array)
         {
 
