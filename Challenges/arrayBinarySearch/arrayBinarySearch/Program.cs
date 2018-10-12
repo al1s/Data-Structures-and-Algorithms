@@ -4,6 +4,12 @@ namespace arrayBinarySearch
 {
     public class Program
     {
+        /// <summary>
+        /// Search for a number in a sorted array
+        /// </summary>
+        /// <param name="array">Sorted array</param>
+        /// <param name="number">A number to find in an array</param>
+        /// <returns>Zero-based position of a number in an array. -1 if not found.</returns>
         public static int BinarySearch(int[] array, int number)
         {
             if (array.Length == 0) return -1;
