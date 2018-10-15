@@ -35,7 +35,11 @@ namespace fibonacciSequenceMember
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"5-th member of Fibonacci seq: {FibonacciIterative(5)}");
+            Console.WriteLine($"7-th member of Fibonacci seq: {FibonacciIterative(7)}");
+            Console.WriteLine($"10-th member of Fibonacci seq: {FibonacciIterative(10)}");
+            Console.WriteLine($"43-th member of Fibonacci seq: {FibonacciIterative(43)}");
+            Console.ReadLine();
         }
     }
 }
