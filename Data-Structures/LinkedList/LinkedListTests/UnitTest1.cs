@@ -11,7 +11,7 @@ namespace LinkedListTests
         public void CanConverToArray()
         {
             Node node = new Node(10);
-            LinkedList.Classes.LinkedList ll = new LinkedList.Classes.LinkedList(node);
+            LinkedList.Classes.LList ll = new LinkedList.Classes.LList(node);
             ll.Add(9);
             Assert.Equal(new object[] { 9, 10 }, ll.ToArray());
             
@@ -23,7 +23,7 @@ namespace LinkedListTests
         public void canAddValues(object valueToAdd, object[] expectedResult)
         {
             Node node = new Node(10);
-            LinkedList.Classes.LinkedList ll = new LinkedList.Classes.LinkedList(node);
+            LinkedList.Classes.LList ll = new LinkedList.Classes.LList(node);
             ll.Add(valueToAdd);
             Assert.Equal(expectedResult, ll.ToArray());
         }
@@ -34,7 +34,7 @@ namespace LinkedListTests
         public void canAppendValues(object valueToAdd, object[] expectedResult)
         {
             Node node = new Node(10);
-            LinkedList.Classes.LinkedList ll = new LinkedList.Classes.LinkedList(node);
+            LinkedList.Classes.LList ll = new LinkedList.Classes.LList(node);
             ll.Append(valueToAdd);
             Assert.Equal(expectedResult, ll.ToArray());
         }
@@ -45,7 +45,7 @@ namespace LinkedListTests
         public void canAddBefore(object valueToAdd, object valueAfter, object[] expectedResult)
         {
             Node node = new Node(10);
-            LinkedList.Classes.LinkedList ll = new LinkedList.Classes.LinkedList(node);
+            LinkedList.Classes.LList ll = new LinkedList.Classes.LList(node);
             ll.Add(9);
             ll.Add(8);
             ll.AddBefore(new Node(valueAfter), valueToAdd);
@@ -58,7 +58,7 @@ namespace LinkedListTests
         public void canAddAfter(object valueToAdd, object valueAfter, object[] expectedResult)
         {
             Node node = new Node(10);
-            LinkedList.Classes.LinkedList ll = new LinkedList.Classes.LinkedList(node);
+            LinkedList.Classes.LList ll = new LinkedList.Classes.LList(node);
             ll.Add(9);
             ll.Add(8);
             ll.AddAfter(new Node(valueAfter), valueToAdd);
