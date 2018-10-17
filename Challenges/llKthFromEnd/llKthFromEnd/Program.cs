@@ -15,7 +15,7 @@ namespace llKthFromEnd
                 cnt += 1;
                 Current = Current.Next;
             }
-            if (cnt - position < 0) throw new IndexOutOfRangeException;
+            if (cnt - position < 0) throw new IndexOutOfRangeException();
             Current = ll.Head;
             while(cnt - position > 0)
             {
