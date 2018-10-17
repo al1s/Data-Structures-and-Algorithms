@@ -6,9 +6,23 @@ namespace llKthFromEnd
 
     class Program
     {
-        public static int GetKthFromEnd(LL ll, int number)
+        public static int GetKthFromEnd(LinkedList ll, int position)
         {
-            return 0;
+            int cnt = default(int);
+            Node Current = ll.Head;
+            while(Current.Next != null)
+            {
+                cnt += 1;
+                Current = Current.Next;
+            }
+            if (cnt - position < 0) throw new IndexOutOfRangeException;
+            Current = ll.Head;
+            while(cnt - position > 0)
+            {
+                cnt -= 1;
+                Current = Current.Next;
+            }
+            return Current.Value;
         }
         static void Main(string[] args)
         {
