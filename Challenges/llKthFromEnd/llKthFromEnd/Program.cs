@@ -6,7 +6,7 @@ namespace llKthFromEnd
 
     class Program
     {
-        public static int GetKthFromEnd(LinkedList ll, int position)
+        public static int GetKthFromEnd(LList ll, int position)
         {
             int cnt = default(int);
             Node Current = ll.Head;
@@ -22,7 +22,7 @@ namespace llKthFromEnd
                 cnt -= 1;
                 Current = Current.Next;
             }
-            return Current.Value;
+            return (int) Current.Value;
         }
         static void Main(string[] args)
         {
