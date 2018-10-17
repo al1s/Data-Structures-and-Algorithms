@@ -8,7 +8,7 @@ namespace LinkedList
         static void Main(string[] args)
         {
             Node node = new Node(10);
-            LL ll = new LL(node);
+            Classes.LinkedList ll = new Classes.LinkedList(node);
             ll.Add(3);
             ll.Add(6);
             Console.WriteLine("Initial LL");

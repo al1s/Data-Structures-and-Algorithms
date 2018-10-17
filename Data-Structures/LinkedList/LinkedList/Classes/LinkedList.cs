@@ -4,11 +4,11 @@ using System.Text;
 
 namespace LinkedList.Classes
 {
-    public class LL
+    public class LinkedList
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
-        public LL(Node newNode)
+        public LinkedList(Node newNode)
         {
             Head = newNode;
             Current = newNode;
