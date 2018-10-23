@@ -7,10 +7,19 @@ namespace Stack_and_Queue
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             Node nodeFirst = new Node("first");
+            Node nodeSecond = new Node("second");
+            Node nodeThird = new Node("third");
             Stack stack = new Stack(nodeFirst );
+            stack.Push(nodeSecond);
+            stack.Push(nodeThird);
+            Console.WriteLine(stack.ToString());
+
+
+
+
             Queue queue = new Queue(nodeFirst );
+            Console.ReadLine();
         }
     }
 }
