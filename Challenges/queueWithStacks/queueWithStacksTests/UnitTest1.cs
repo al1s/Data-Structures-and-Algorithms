@@ -31,6 +31,32 @@ namespace queueWithStacksTests
             Assert.Equal(2, queue.Length);
         }
         /// <summary>
+        /// Tests whether can enqueue and another element to the queue
+        /// </summary>
+        [Fact]
+        public void CanEnqueueThirdElm()
+        {
+            Node nodeFirst = new Node("first");
+            Node nodeSecond = new Node("second");
+            Node nodeThird = new Node("third");
+            QueueWithStacks queue = new QueueWithStacks(nodeFirst);
+            queue.Enqueue(nodeSecond);
+            queue.Enqueue(nodeThird);
+            Assert.Equal(nodeFirst, queue.Peek());
+            Assert.Equal(3, queue.Length);
+        }
+        /// <summary>
+        /// Tests whether can dequeue one element from the queue
+        /// </summary>
+        [Fact]
+        public void CanDequeueOneElm()
+        {
+            Node nodeFirst = new Node("first");
+            QueueWithStacks queue = new QueueWithStacks(nodeFirst);
+            Node firstResult = queue.Dequeue();
+            Assert.Equal(nodeFirst, firstResult);
+        }
+        /// <summary>
         /// Tests whether can dequeue from the queue
         /// </summary>
         [Fact]
@@ -44,6 +70,17 @@ namespace queueWithStacksTests
             Node secondResult = queue.Dequeue();
             Assert.Equal(nodeFirst, firstResult);
             Assert.Equal(nodeSecond, secondResult);
+        }
+        /// <summary>
+        /// Tests whether throws null reference exception when dequeue from the empty queue
+        /// </summary>
+        [Fact]
+        public void GetExceptionNullPointerRetrievingEmptyQueue()
+        {
+            Node nodeFirst = new Node("first");
+            QueueWithStacks queue = new QueueWithStacks(nodeFirst);
+            queue.Dequeue();
+            Assert.Throws<NullReferenceException>(() => queue.Dequeue());
         }
     }
 }
