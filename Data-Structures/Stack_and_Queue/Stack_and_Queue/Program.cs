@@ -15,10 +15,10 @@ namespace Stack_and_Queue
             stack.Push(nodeThird);
             Console.WriteLine(stack.ToString());
 
-
-
-
             Queue queue = new Queue(nodeFirst );
+            queue.Enqueue(nodeSecond);
+            queue.Enqueue(nodeThird);
+            Console.WriteLine(queue.ToString());
             Console.ReadLine();
         }
     }

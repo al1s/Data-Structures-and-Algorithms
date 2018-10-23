@@ -23,6 +23,7 @@ namespace Stack_and_Queue.Classes
         {
             _head = Node;
             _tail = Node;
+            _tail.Next = _head;
         }
 
         /// <summary>
@@ -71,12 +72,13 @@ namespace Stack_and_Queue.Classes
         {
             string result = string.Empty;
             Node originHead = _head;
-            while(_head != _tail)
+            while(_head.Next != _tail)
             {
-                if(_head == originHead ) result = $"{_head.Value}(TOP)";
+                if(_head == originHead ) result = $"{_head.Value}(HEAD)";
                 else result = $"{result} -> {_head.Value}";
                 _head = _head.Next;
             }
+            result = $"{result} -> {_tail.Value}(TAIL)";
             _head = originHead;
             return $"{result} -> null";
         }
