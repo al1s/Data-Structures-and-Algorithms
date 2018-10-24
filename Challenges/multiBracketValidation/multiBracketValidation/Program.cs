@@ -3,7 +3,7 @@ using Stack_and_Queue.Classes;
 
 namespace multiBracketValidation
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Check whether the brackets in an input string are balanced
