@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFOAnimalShelter", "FIFOAnimalShelter\FIFOAnimalShelter.csproj", "{3DFD5C7A-CB5F-4498-97DD-27718FB93EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFOAnimalShelterTests", "FIFOAnimalShelterTests\FIFOAnimalShelterTests.csproj", "{CE19BE71-B0E5-4F6A-81A8-3AFB96528BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFF1FB0D-20D4-4E8A-A389-232E65BCCC3C}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DFD5C7A-CB5F-4498-97DD-27718FB93EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFD5C7A-CB5F-4498-97DD-27718FB93EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFD5C7A-CB5F-4498-97DD-27718FB93EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFD5C7A-CB5F-4498-97DD-27718FB93EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE19BE71-B0E5-4F6A-81A8-3AFB96528BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE19BE71-B0E5-4F6A-81A8-3AFB96528BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE19BE71-B0E5-4F6A-81A8-3AFB96528BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE19BE71-B0E5-4F6A-81A8-3AFB96528BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88902324-D02C-4E94-8720-25BEEE7F88BC}
+	EndGlobalSection
+EndGlobal
