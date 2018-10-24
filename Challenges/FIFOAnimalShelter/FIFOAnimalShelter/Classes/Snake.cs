@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FIFOAnimalShelter.Classes
+﻿namespace FIFOAnimalShelter.Classes
 {
-    class Snake : Animal
+    public class Snake : Animal
     {
         public override string Name { get; set; }
         public override Animal Next { get; set; }

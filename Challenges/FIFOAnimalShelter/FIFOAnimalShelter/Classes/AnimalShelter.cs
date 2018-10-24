@@ -8,6 +8,13 @@ namespace FIFOAnimalShelter.Classes
         Animal _head = default(Animal);
         // last animal to be adopted (last in)
         Animal _tail = default(Animal);
+        public int Size { get; private set; } = 0;
+        /// <summary>
+        /// Empty shelter constructor
+        /// </summary>
+        public AnimalShelter()
+        {
+        }
         /// <summary>
         /// Shelter constructor
         /// </summary>
@@ -16,6 +23,7 @@ namespace FIFOAnimalShelter.Classes
         {
             _head = animal;
             _tail = animal;
+            Size += 1;
         }
         /// <summary>
         /// Add an animal to the shelter
@@ -23,8 +31,17 @@ namespace FIFOAnimalShelter.Classes
         /// <param name="animal">An animal to be added to the shelter instance</param>
         public void Enqueue(Animal animal)
         {
-            _tail.Next = animal;
-            _tail = animal;
+            if(_head == null)
+            {
+                _head = animal;
+                _tail = animal;
+            }
+            else
+            {
+                _tail.Next = animal;
+                _tail = animal;
+            }
+            Size += 1;
         }
         /// <summary>
         /// Adopt the first animal (the most long waiting) from the shelter instance (remove)
@@ -35,6 +52,7 @@ namespace FIFOAnimalShelter.Classes
             Animal temp = _head;
             _head = _head.Next;
             temp.Next = null;
+            Size -= 1;
             return temp;
         }
         /// <summary>
@@ -54,7 +72,7 @@ namespace FIFOAnimalShelter.Classes
                 // keep pointer to the longest waiting animal
                 temp = this.Dequeue();
                 this.Enqueue(temp);
-                while (_head != temp)
+                while (_head != temp && _head != null)
                 {
                     if (_head.GetType() == animal && result == null)
                         result = this.Dequeue();
