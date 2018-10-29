@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    public class BinarySearchTree<T>
+    public class BinarySearchTree<T> 
     {
         public BinaryTree<int> _bt { get; set; }
         public BinarySearchTree()
@@ -13,22 +13,34 @@ namespace Tree.Classes
         }
         public void Add(int value)
         {
-            this.Add(value, _bt.Root);
+            if (_bt.Root == null) _bt.Add(value);
+            else Add(value, _bt.Root);
         }
         public void Add(int value, Node<int> root)
         {
-            if(root == null)
+            if (value > root.Value)
+                if (root.RightChild != null)
+                {
+                    Add(value, root.RightChild);
+                }
+                else
+                {
+                    _bt.AddAtPosition(root, "right", value);
+                    return;
+                }
+            else if (value < root.Value)
             {
-                root = new Node<int>(value);
+                if (root.LeftChild != null)
+                {
+                    Add(value, root.LeftChild);
+                }
+                else
+                {
+                    _bt.AddAtPosition(root, "left", value);
+                    return;
+                }
             }
-            if(value > root.Value)
-            {
-                this.Add(value, root.RightChild);
-            }
-            else if(value < root.Value)
-            {
-                this.Add(value, root.LeftChild);
-            }
+            else throw new Exception($"Can't insert the value: {value}");
         }
         public Node<T> Search(T value)
         {

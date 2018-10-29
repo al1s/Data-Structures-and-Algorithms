@@ -6,7 +6,7 @@ namespace Tree
 {
     class Program
     {
-        static void Main(string[] args)
+        static void BinaryTreesDemo()
         {
             BinaryTree<int> bT = new BinaryTree<int>();
             bT.Add(0);
@@ -29,6 +29,27 @@ namespace Tree
             Console.WriteLine("Postordered tree:");
             bT.PostOrder(bT.Root);
             Array.ForEach<Node<int>>(bT.arrayResult.ToArray(), elm => Console.Write($"{elm.Value}, "));
+
+        }
+        static void BSTDemo()
+        {
+            BinarySearchTree<int> bst = new BinarySearchTree<int>(); 
+            bst.Add(50);
+            bst.Add(30);
+            bst.Add(70);
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(7);
+            bst.Add(40);
+            bst.Add(45);
+            bst.Add(80);
+
+
+        }
+        static void Main(string[] args)
+        {
+            //BinaryTreesDemo();
+            BSTDemo();
             Console.ReadLine();
         } 
     }
