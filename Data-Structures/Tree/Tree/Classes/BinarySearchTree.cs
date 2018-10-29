@@ -6,16 +6,31 @@ namespace Tree.Classes
 {
     public class BinarySearchTree<T> 
     {
-        public BinaryTree<int> _bt { get; set; }
+        /// <summary>
+        /// Inner storage for a binary tree
+        /// </summary>
+        private BinaryTree<int> _bt { get; set; }
+        /// <summary>
+        /// Empty BST constructor
+        /// </summary>
         public BinarySearchTree()
         {
             _bt = new BinaryTree<int>();
         }
+        /// <summary>
+        /// Add a new value to the BST starting from the existing root
+        /// </summary>
+        /// <param name="value">Value to be added</param>
         public void Add(int value)
         {
             if (_bt.Root == null) _bt.Add(value);
             else Add(value, _bt.Root);
         }
+        /// <summary>
+        /// Add a new value to the BST starting from a given node
+        /// </summary>
+        /// <param name="value">Value to be added</param>
+        /// <param name="root">A node starting from which a node to be added</param>
         public void Add(int value, Node<int> root)
         {
             if (value > root.Value)
@@ -25,7 +40,7 @@ namespace Tree.Classes
                 }
                 else
                 {
-                    _bt.AddAtPosition(root, "right", value);
+                    root.RightChild = new Node<int>(value);
                     return;
                 }
             else if (value < root.Value)
@@ -36,29 +51,43 @@ namespace Tree.Classes
                 }
                 else
                 {
-                    _bt.AddAtPosition(root, "left", value);
+                    root.LeftChild = new Node<int>(value);
                     return;
                 }
             }
             else throw new Exception($"Can't insert the value: {value}");
         }
+        /// <summary>
+        /// Search for a value in the BST
+        /// </summary>
+        /// <param name="value">Value to search for</param>
+        /// <returns>Node where the value is stored, empty node if not found</returns>
         public Node<int> Search(int value)
         {
             if (value == _bt.Root.Value) return _bt.Root;
             else return Search(value, _bt.Root);
         }
+        /// <summary>
+        /// Search for a value in the BST starting from a given node
+        /// </summary>
+        /// <param name="value">Value to search for</param>
+        /// <param name="root">A node to start from</param>
+        /// <returns>Node where the value is stored, empty node if not found</returns>
         public Node<int> Search(int value, Node<int> root)
         {
             if (value == root.Value) return root;
             else if (value > root.Value) return Search(value, root.RightChild);
             else if (value < root.Value) return Search(value, root.LeftChild);
-            else throw new Exception($"The value '{value}' not found");
+            else return default(Node<int>);
         }
+        /// <summary>
+        /// Get an inner representation of the BST as an array of nodes
+        /// </summary>
+        /// <returns>Array of nodes</returns>
         public Node<int>[] ToArray()
         {
-            _bt.ListResult = new List<Node<int>>();
             _bt.InOrder(_bt.Root);
-            return _bt.ListResult.ToArray(); 
+            return _bt.ToArray(); 
         }
     }
 }

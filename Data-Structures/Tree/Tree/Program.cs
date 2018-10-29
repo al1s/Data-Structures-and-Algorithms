@@ -18,17 +18,15 @@ namespace Tree
             bT.Add(6);
             Console.WriteLine("Preordered tree:");
             bT.PreOrder(bT.Root);
-            Array.ForEach<Node<int>>(bT.ListResult.ToArray(), elm => Console.Write($"{elm.Value}, "));
-            bT.ListResult = new List<Node<int>>();
+            Array.ForEach<Node<int>>(bT.ToArray(), elm => Console.Write($"{elm.Value}, "));
             Console.WriteLine();
             Console.WriteLine("Inordered tree:");
             bT.InOrder(bT.Root);
-            Array.ForEach<Node<int>>(bT.ListResult.ToArray(), elm => Console.Write($"{elm.Value}, "));
-            bT.ListResult = new List<Node<int>>();
+            Array.ForEach<Node<int>>(bT.ToArray(), elm => Console.Write($"{elm.Value}, "));
             Console.WriteLine();
             Console.WriteLine("Postordered tree:");
             bT.PostOrder(bT.Root);
-            Array.ForEach<Node<int>>(bT.ListResult.ToArray(), elm => Console.Write($"{elm.Value}, "));
+            Array.ForEach<Node<int>>(bT.ToArray(), elm => Console.Write($"{elm.Value}, "));
             Console.WriteLine();
 
         }
