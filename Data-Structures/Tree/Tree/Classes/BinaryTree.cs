@@ -7,7 +7,7 @@ namespace Tree.Classes
     public class BinaryTree<T>
     {
         public Node<T> Root = new Node<T>();
-        public List<Node<T>> arrayResult = new List<Node<T>>();
+        public List<Node<T>> ListResult = new List<Node<T>>();
 
         public BinaryTree()
         {
@@ -64,21 +64,21 @@ namespace Tree.Classes
         }
         public void PreOrder(Node<T> root)
         {
-            arrayResult.Add(root);
+            ListResult.Add(root);
             if (root.LeftChild != null) this.PreOrder(root.LeftChild);
             if (root.RightChild != null) this.PreOrder(root.RightChild);
         }
         public void InOrder(Node<T> root)
         {
             if (root.LeftChild != null) this.InOrder(root.LeftChild);
-            arrayResult.Add(root);
+            ListResult.Add(root);
             if (root.RightChild != null) this.InOrder(root.RightChild);
         }
         public void PostOrder(Node<T> root)
         {
             if (root.LeftChild != null) this.PostOrder(root.LeftChild);
             if (root.RightChild != null) this.PostOrder(root.RightChild);
-            arrayResult.Add(root);
+            ListResult.Add(root);
         }
     }
 }
