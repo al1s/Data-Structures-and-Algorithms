@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    public class BinarySearchTree<T> 
+    public class BinarySearchTree 
     {
         /// <summary>
         /// Inner storage for a binary tree
@@ -31,7 +31,7 @@ namespace Tree.Classes
         /// </summary>
         /// <param name="value">Value to be added</param>
         /// <param name="root">A node starting from which a node to be added</param>
-        public void Add(int value, Node<int> root)
+        private void Add(int value, Node<int> root)
         {
             if (value > root.Value)
                 if (root.RightChild != null)
@@ -73,18 +73,24 @@ namespace Tree.Classes
         /// <param name="value">Value to search for</param>
         /// <param name="root">A node to start from</param>
         /// <returns>Node where the value is stored, empty node if not found</returns>
-        public Node<int> Search(int value, Node<int> root)
+        private Node<int> Search(int value, Node<int> root)
         {
             if (value == root.Value) return root;
-            else if (value > root.Value) return Search(value, root.RightChild);
-            else if (value < root.Value) return Search(value, root.LeftChild);
+            else if (value > root.Value && root.RightChild != null)
+            {
+                return Search(value, root.RightChild);
+            }
+            else if (value < root.Value && root.LeftChild != null)
+            {
+                return Search(value, root.LeftChild);
+            }
             else return default(Node<int>);
         }
         /// <summary>
         /// Get an inner representation of the BST as an array of nodes
         /// </summary>
         /// <returns>Array of nodes</returns>
-        public Node<int>[] ToArray()
+        public int[] ToArray()
         {
             _bt.InOrder(_bt.Root);
             return _bt.ToArray(); 

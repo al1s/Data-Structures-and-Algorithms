@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Tree.Classes
@@ -25,7 +26,7 @@ namespace Tree.Classes
         /// Get first (breadth-first) node without any of leaves (or both)
         /// </summary>
         /// <returns>Node without a leaf</returns>
-        private Node<T> FindNextAvailableRoot()
+        public Node<T> FindNextAvailableRoot()
         {
             Queue<Node<T>> queue = new Queue<Node<T>>();
             Node<T> result = new Node<T>();
@@ -91,8 +92,8 @@ namespace Tree.Classes
         public void PreOrder(Node<T> root)
         {
             _listResult.Add(root);
-            if (root.LeftChild != null) this.PreOrder(root.LeftChild);
-            if (root.RightChild != null) this.PreOrder(root.RightChild);
+            if (root.LeftChild != null) PreOrder(root.LeftChild);
+            if (root.RightChild != null) PreOrder(root.RightChild);
         }
         /// <summary>
         /// Prepare intermediary representation of the BT in inorder traversal
@@ -100,9 +101,9 @@ namespace Tree.Classes
         /// <param name="root">Node to start with</param>
         public void InOrder(Node<T> root)
         {
-            if (root.LeftChild != null) this.InOrder(root.LeftChild);
+            if (root.LeftChild != null) InOrder(root.LeftChild);
             _listResult.Add(root);
-            if (root.RightChild != null) this.InOrder(root.RightChild);
+            if (root.RightChild != null) InOrder(root.RightChild);
         }
         /// <summary>
         /// Prepare intermediary presentation of the BT in postorder traversal
@@ -110,19 +111,21 @@ namespace Tree.Classes
         /// <param name="root">Node to start with</param>
         public void PostOrder(Node<T> root)
         {
-            if (root.LeftChild != null) this.PostOrder(root.LeftChild);
-            if (root.RightChild != null) this.PostOrder(root.RightChild);
+            if (root.LeftChild != null) PostOrder(root.LeftChild);
+            if (root.RightChild != null) PostOrder(root.RightChild);
             _listResult.Add(root);
         }
         /// <summary>
-        /// Convert intermediary representation of the BT to an array
+        /// Convert intermediary representation of the BT to an array (be default it uses inorder traversing
         /// </summary>
         /// <returns>Array of Nodes</returns>
-        public Node<T>[] ToArray()
+        public T[] ToArray()
         {
+            if (_listResult.Count == 0) InOrder(Root);
             List<Node<T>> _temp = _listResult;
             _listResult = new List<Node<T>>();
-            return _temp.ToArray();
+            T[] _tempValues = _temp.Select(x => x.Value).ToArray();
+            return _tempValues;
         }
     }
 }
