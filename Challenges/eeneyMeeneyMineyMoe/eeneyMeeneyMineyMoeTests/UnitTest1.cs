@@ -7,6 +7,9 @@ namespace eeneyMeeneyMineyMoeTests
 {
     public class UnitTest1
     {
+        /// <summary>
+        /// Test whether can get the correct winner
+        /// </summary>
         [Fact]
         public void CanFindWinner()
         {
@@ -17,6 +20,9 @@ namespace eeneyMeeneyMineyMoeTests
             llist.Append("Moe");
             Assert.Equal("Eeney", Program.EeneyMeeneyMineyMoe(llist, 3));
         }
+        /// <summary>
+        /// Test whether return empty string for N equal 0
+        /// </summary>
         [Fact]
         public void NoWinnerIfDontWantToPlay()
         {
@@ -27,6 +33,9 @@ namespace eeneyMeeneyMineyMoeTests
             llist.Append("Moe");
             Assert.Equal(string.Empty, Program.EeneyMeeneyMineyMoe(llist, 0));
         }
+        /// <summary>
+        /// Performance test - time complexity is not O(n)
+        /// </summary>
         [Fact]
         public void PerfTest()
         {
