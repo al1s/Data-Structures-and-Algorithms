@@ -16,4 +16,10 @@
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Tree">
+      <HintPath>..\..\..\Data-Structures\Tree\Tree\bin\Debug\netcoreapp2.1\Tree.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

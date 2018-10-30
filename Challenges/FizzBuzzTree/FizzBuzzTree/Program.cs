@@ -3,7 +3,7 @@ using Tree.Classes;
 
 namespace FizzBuzzTree
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Analyze tree for numbers divisible by 3, 5, 15
@@ -27,13 +27,17 @@ namespace FizzBuzzTree
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             BinaryTree<int> bt = new BinaryTree<int>();
             bt.Add(3);
             bt.Add(5);
             bt.Add(15);
             bt.Add(4);
             bt.Add(82);
+            bt.PreOrder(bt.Root);
+            Console.WriteLine("Initial tree:");
+            Array.ForEach(bt.ToArray(),elm => Console.Write($"{elm}, "));
+            Console.WriteLine();
+            Console.WriteLine("FizzBuzz parsed tree:");
             Console.WriteLine(FizzBuzzTree(bt));
             Console.ReadLine();
         }
