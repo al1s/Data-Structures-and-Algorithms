@@ -7,8 +7,8 @@ namespace Hashtables.Classes
 {
     public class Hashtable<T>
     {
-        private int _numOfBuckets = 1024;
-        private int _primeConst = 599;
+        private readonly int _numOfBuckets = 1024;
+        private readonly int _primeConst = 599;
         private LinkedList<Node<T>>[] _array;
         /// <summary>
         ///  Reserve a memory for a new hashtable
