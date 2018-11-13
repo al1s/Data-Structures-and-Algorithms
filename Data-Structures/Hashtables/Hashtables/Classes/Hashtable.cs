@@ -10,14 +10,26 @@ namespace Hashtables.Classes
         private int _numOfBuckets = 1024;
         private int _primeConst = 599;
         private LinkedList<Node<T>>[] _array;
+        /// <summary>
+        ///  Reserve a memory for a new hashtable
+        /// </summary>
         public Hashtable()
         {
             _array = new LinkedList<Node<T>>[_numOfBuckets];
         }
+        /// <summary>
+        /// Get hash value for a string: convert each character to ASCII code, multiply by prime number, get the sum of all characters and divide it by the number of buckets
+        /// </summary>
+        /// <param name="key">String to get the hash for</param>
+        /// <returns>Numeric hash value</returns>
         public int GetHash(string key)
         {
             return Encoding.ASCII.GetBytes(key).Select(k => k * _primeConst).Sum() / _numOfBuckets;
         }
+        /// <summary>
+        /// Add new node (consists of key, value pair) to the hashtable
+        /// </summary>
+        /// <param name="node">Node to be added</param>
         public void Add(Node<T> node)
         {
             int bucketPosition = GetHash(node.Key);
@@ -37,6 +49,11 @@ namespace Hashtables.Classes
             }
 
         }
+        /// <summary>
+        /// Find a node for a given key
+        /// </summary>
+        /// <param name="key">Search key</param>
+        /// <returns>Node with a given key</returns>
         public Node<T> Find(string key)
         {
             int bucketPosition = GetHash(key);

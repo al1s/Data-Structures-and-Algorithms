@@ -11,6 +11,8 @@ namespace Hashtables
             ht.Add(new Node<string>() { Key = "Cat", Value = "Jessy" });
             ht.Add(new Node<string>() { Key = "Dog", Value = "Goldy" });
             ht.Add(new Node<string>() { Key = "Candy", Value = "Hershy Kisses" });
+            Console.WriteLine(ht.Find("Cat").Value);
+            Console.ReadLine();
         }
     }
 }
