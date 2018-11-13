@@ -12,8 +12,10 @@ namespace Hashtables
             ht.Add(new Node<string>() { Key = "Doe", Value = "Tess" });// the same bucket as for "Cat"
             ht.Add(new Node<string>() { Key = "Dog", Value = "Goldy" });
             ht.Add(new Node<string>() { Key = "Candy", Value = "Hershy Kisses" });
-            Console.WriteLine(ht.Find("Cat").Value);
-            Console.WriteLine(ht.Find("Doe").Value);
+            Console.WriteLine($"The value for the key 'Cat': {ht.Find("Cat").Value}");
+            Console.WriteLine($"The value for the key 'Cat': {ht.Find("Doe").Value}");
+            Console.WriteLine($"Do we have key 'Dove' in our dictionary: {ht.Contains("Dove").ToString()}");
+            Console.WriteLine($"Do we have key 'Dove' in our dictionary: {ht.Contains("Candy").ToString()}");
             Console.ReadLine();
         }
     }

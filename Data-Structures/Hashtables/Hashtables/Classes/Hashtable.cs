@@ -42,8 +42,10 @@ namespace Hashtables.Classes
             {
                 foreach (Node<T> existingNode in _array[bucketPosition])
                 {
-                if (existingNode.Key == node.Key)
-                    throw new Exception("The node already exists for the key");
+                    if (existingNode.Key == node.Key)
+                    {
+                        throw new Exception("The node already exists for the key");
+                    }
                 }
                 _array[bucketPosition].AddLast(node);
             }
@@ -57,11 +59,22 @@ namespace Hashtables.Classes
         public Node<T> Find(string key)
         {
             int bucketPosition = GetHash(key);
+            if (_array[bucketPosition] == null)
+                return default(Node<T>);
             foreach (Node<T> item in _array[bucketPosition])
             {
-                if (item.Key == key) return item;
+                if (item.Key == key)
+                {
+                    return item;
+                }
             }
             return default(Node<T>);
+        }
+        public bool Contains(string key)
+        {
+            if (Find(key) != null)
+                return true;
+            return false;
         }
     }
 }
