@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtables", "Hashtables\Hashtables.csproj", "{67895901-54BB-4CEC-9C81-F741160D5768}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1515202-EF58-4F7C-9A0F-A0FF91B229D2}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtablesTests", "HashtablesTests\HashtablesTests.csproj", "{D96FDD5A-F5CF-43B4-8CFF-EE5A1EA8D92E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67895901-54BB-4CEC-9C81-F741160D5768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67895901-54BB-4CEC-9C81-F741160D5768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67895901-54BB-4CEC-9C81-F741160D5768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67895901-54BB-4CEC-9C81-F741160D5768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96FDD5A-F5CF-43B4-8CFF-EE5A1EA8D92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96FDD5A-F5CF-43B4-8CFF-EE5A1EA8D92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96FDD5A-F5CF-43B4-8CFF-EE5A1EA8D92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96FDD5A-F5CF-43B4-8CFF-EE5A1EA8D92E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84D2A37C-410E-41FD-A66E-D573596490D9}
+	EndGlobalSection
+EndGlobal
