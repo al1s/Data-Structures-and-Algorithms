@@ -30,7 +30,7 @@ namespace treeIntersection
         {
             List<int> result = new List<int>();
             Dictionary<int, bool> dict = new Dictionary<int, bool>();
-            /// Helper action to add node values to a list if they are in a hashtable
+            // Helper action to add node values to a list if they are in a hashtable
             void _checkElmInHashtable(Node<int> node)
             {
                 if (dict.ContainsKey(node.Value))
@@ -38,10 +38,13 @@ namespace treeIntersection
                     result.Add(node.Value);
                 }
             }
-            /// Helper action to add node values to hashtable
+            // Helper action to add node values to hashtable
             void _addToHashtable(Node<int> node) =>  
                 dict.Add(node.Value, true);
+
+            // add 
             _traverser(tree1.Root, _addToHashtable);
+            // Chech all nodes in second tree for existing in prev saved dict
             _traverser(tree2.Root, _checkElmInHashtable);
             return result;
         }
