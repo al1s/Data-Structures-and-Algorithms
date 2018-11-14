@@ -76,5 +76,13 @@ namespace Hashtables.Classes
                 return true;
             return false;
         }
+        public List<Node<T>> ToList()
+        {
+            var result = from elm in _array
+                         where elm != null
+                         from innerElm in elm
+                         select innerElm;
+            return result.ToList(); 
+        }
     }
 }
