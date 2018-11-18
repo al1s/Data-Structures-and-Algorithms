@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace uniqueChars
 {
-    class Program
+    public class Program
     {
         public static bool UniqueChars(string sentence)
         {
