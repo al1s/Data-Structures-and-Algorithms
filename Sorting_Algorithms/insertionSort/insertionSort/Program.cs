@@ -12,7 +12,7 @@ namespace insertionSort
                 int temp = inpArr[i];
                 int j = i - 1;
 
-                while (j >= 0 && temp < inpArr[i])
+                while (j >= 0 && temp < inpArr[j])
                 {
                     inpArr[j + 1] = inpArr[j];
                     j--;
@@ -22,7 +22,14 @@ namespace insertionSort
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int[] arr = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            Console.WriteLine("Initial array:");
+            Array.ForEach(arr, elm => Console.Write($"{elm}, "));
+            InsertionSort(arr);
+            Console.WriteLine();
+            Console.WriteLine("Sorted array:");
+            Array.ForEach(arr, elm => Console.Write($"{elm}, "));
+            Console.ReadLine();
         }
     }
 }
