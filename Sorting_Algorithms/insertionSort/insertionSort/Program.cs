@@ -10,12 +10,13 @@ namespace insertionSort
             for (int i = 1; i < inpArr.Length; i++)
             {
                 int temp = inpArr[i];
-                int j = i - 1;
-
-                while (j >= 0 && temp < inpArr[j])
+                int j = 0;
+                for (j = i - 1; j >= 0; j--)
                 {
-                    inpArr[j + 1] = inpArr[j];
-                    j--;
+                    if (inpArr[j] > temp)
+                        inpArr[j + 1] = inpArr[j];
+                    else
+                        break;
                 }
                 inpArr[j + 1] = temp;
             }
