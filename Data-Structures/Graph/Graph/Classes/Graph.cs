@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Graph.Classes
 {
-    public class Graph<T>
+    public class Graph<T> : IEnumerable<Vertex<T>>
     {
         /// <summary>
         /// internal storage for a graph as adjacency list with weights:  
@@ -59,6 +60,7 @@ namespace Graph.Classes
             else
                 throw new Exception($"The vertex with a value '{vertex.Value}' already exists.");
         }
+
         /// <summary>
         /// Add a new edge between vertices in a graph
         /// </summary>
@@ -67,14 +69,20 @@ namespace Graph.Classes
         /// <param name="weight">Weight of the edge</param>
         public void AddEdge(Vertex<T> vertex1, Vertex<T> vertex2, int weight)
         {
-            bool vertex1Exists = _graph.TryGetValue(vertex1, out Dictionary<Vertex<T>, int> neighbors1);
-            bool vertex2Exists = _graph.TryGetValue(vertex2, out Dictionary<Vertex<T>, int> neighbors2);
+            bool vertex1Exists = _graph.ContainsKey(vertex1);
+            bool vertex2Exists = _graph.ContainsKey(vertex2);
             if (!vertex1Exists)
                 AddNode(vertex1);
-            GetNeighbors(vertex1).Add(vertex2, weight);
+            Dictionary<Vertex<T>, int> neighbors1 = GetNeighbors(vertex1);
+            if(!neighbors1.ContainsKey(vertex2))
+                neighbors1.Add(vertex2, weight);
+
+
             if (!vertex2Exists)
                 AddNode(vertex2);
-            GetNeighbors(vertex2).Add(vertex1, weight);
+            Dictionary<Vertex<T>, int> neighbors2 = GetNeighbors(vertex2);
+            if(!neighbors2.ContainsKey(vertex1))
+                neighbors2.Add(vertex1, weight);
         }
 
         /// <summary>
@@ -85,9 +93,27 @@ namespace Graph.Classes
         public Dictionary<Vertex<T>, int> GetNeighbors(Vertex<T> vertex)
         {
             Dictionary<Vertex<T>, int> neighbors;
-            if(_graph.TryGetValue(vertex, out neighbors))
+            if (_graph.TryGetValue(vertex, out neighbors))
                 return neighbors;
             throw new Exception("No such vertex.");
+        }
+
+        /// <summary>
+        /// Make graph vertices iterable
+        /// </summary>
+        /// <returns>Generic enumerator</returns>
+        public IEnumerator<Vertex<T>> GetEnumerator()
+        {
+            return _graph.Keys.ToList().GetEnumerator();
+        }
+
+        /// <summary>
+        /// Make graph vertices iterable
+        /// </summary>
+        /// <returns>Enumerator</returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
