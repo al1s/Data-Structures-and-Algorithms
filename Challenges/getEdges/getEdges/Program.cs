@@ -62,25 +62,25 @@ namespace getEdges
             }
             Console.WriteLine();
             Console.WriteLine();
-            string[] iternary = new string[] { "Metroville", "Pandora" };
-            string iternaryStr = string.Join(" -> ", iternary);
-            Console.WriteLine($"Iternary {iternaryStr} with direct flights exists: {GetEdge(graph, iternary)}");
+            string[] itinerary = new string[] { "Metroville", "Pandora" };
+            string itineraryStr = string.Join(" -> ", itinerary);
+            Console.WriteLine($"Itinerary {itineraryStr} with direct flights exists: {GetEdge(graph, itinerary)}");
 
-            iternary = new string[] { "Arendelle", "New Monstropolis", "Naboo" };
-            iternaryStr = string.Join(" -> ", iternary);
-            Console.WriteLine($"Iternary {iternaryStr} with direct flights exists: {GetEdge(graph, iternary)}");
+            itinerary = new string[] { "Arendelle", "New Monstropolis", "Naboo" };
+            itineraryStr = string.Join(" -> ", itinerary);
+            Console.WriteLine($"Itinerary {itineraryStr} with direct flights exists: {GetEdge(graph, itinerary)}");
 
-            iternary = new string[] { "Naboo", "Pandora" };
-            iternaryStr = string.Join(" -> ", iternary);
-            Console.WriteLine($"Iternary {iternaryStr} with direct flights exists: {GetEdge(graph, iternary)}");
+            itinerary = new string[] { "Naboo", "Pandora" };
+            itineraryStr = string.Join(" -> ", itinerary);
+            Console.WriteLine($"Itinerary {itineraryStr} with direct flights exists: {GetEdge(graph, itinerary)}");
 
-            iternary = new string[] { "Narnia", "Arendelle, Naboo" };
-            iternaryStr = string.Join(" -> ", iternary);
-            Console.WriteLine($"Iternary {iternaryStr} with direct flights exists: {GetEdge(graph, iternary)}");
+            itinerary = new string[] { "Narnia", "Arendelle, Naboo" };
+            itineraryStr = string.Join(" -> ", itinerary);
+            Console.WriteLine($"Itinerary {itineraryStr} with direct flights exists: {GetEdge(graph, itinerary)}");
 
-            iternary = new string[] { "Pandora", "Arendelle", "Metroville", "New Monstropolis", "Naboo", "Narnia" };
-            iternaryStr = string.Join(" -> ", iternary);
-            Console.WriteLine($"Iternary {iternaryStr} with direct flights exists: {GetEdge(graph, iternary)}");
+            itinerary = new string[] { "Pandora", "Arendelle", "Metroville", "New Monstropolis", "Naboo", "Narnia" };
+            itineraryStr = string.Join(" -> ", itinerary);
+            Console.WriteLine($"Itinerary {itineraryStr} with direct flights exists: {GetEdge(graph, itinerary)}");
 
             Console.ReadLine();
         }
